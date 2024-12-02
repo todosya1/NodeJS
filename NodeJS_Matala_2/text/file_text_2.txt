@@ -1,0 +1,3 @@
+*** file 2 stroke 1
+*** file 2 stroke 2
+*** file 2 stroke 3

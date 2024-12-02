@@ -1,0 +1,5 @@
+*** file 5 stroke 1
+*** file 5 stroke 2
+*** file 5 stroke 3
+*** file 5 stroke 4
+*** file 5 stroke 5

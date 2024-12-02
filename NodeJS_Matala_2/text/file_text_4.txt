@@ -1,0 +1,4 @@
+*** file 4 stroke 1
+*** file 4 stroke 2
+*** file 4 stroke 3
+*** file 4 stroke 4

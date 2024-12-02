@@ -1,0 +1,10 @@
+*** file 10 stroke 1
+*** file 10 stroke 2
+*** file 10 stroke 3
+*** file 10 stroke 4
+*** file 10 stroke 5
+*** file 10 stroke 6
+*** file 10 stroke 7
+*** file 10 stroke 8
+*** file 10 stroke 9
+*** file 10 stroke 10

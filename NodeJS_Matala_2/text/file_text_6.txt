@@ -1,0 +1,8 @@
+*** file 6 stroke 1
+*** file 6 stroke 2
+*** file 6 stroke 3
+*** file 6 stroke 4
+*** file 6 stroke 5
+*** file 6 stroke 6
+*** file 6 stroke 7
+*** file 6 stroke 8
