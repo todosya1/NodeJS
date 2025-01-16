@@ -1,0 +1,14 @@
+{
+  "name": "alsunode",
+  "version": "1.0.0",
+  "description": "git add .",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^19.0.0"
+  }
+}
