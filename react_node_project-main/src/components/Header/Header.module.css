@@ -1,0 +1,69 @@
+.header {
+    background-color: #0074d9d5; 
+    color: #fff; 
+    padding: 1em 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 1em; 
+}
+
+.logo img {
+    width: 50px; 
+    height: auto; 
+}
+
+.projectName h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+    display: flex; 
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 1em; 
+}
+
+.menuItem {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.menuItem:hover {
+    color: #FFDC00; 
+}
+
+.active {
+    font-weight: bold;
+    border-bottom: 2px solid #FFDC00; 
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .menu {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 0.5em 0;
+    }
+}
