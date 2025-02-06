@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Contacts.module.css';
-
+import CustomButton from '../common/CustomButton/CustomButton';
 
 /**
  * A functional component that renders a form for sending a message to the
@@ -90,9 +90,13 @@ function ContactUs() {
                         required
                     ></textarea>
 
-                    <button type="submit" className={styles.submitButton}>
+                    <CustomButton
+                        type="submit"
+                        variant="primary"
+                        className="primary"
+                    >
                         Send Message
-                    </button>
+                    </CustomButton>
                 </form>
             </div>
         </section>

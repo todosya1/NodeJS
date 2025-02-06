@@ -9,6 +9,7 @@ import About from '../About/About';
 import Contact from '../Contact/Contact';
 import SingleGame from '../SingleGame/SingleGame';
 import GameUpload from '../GameUpload/GameUpload';
+import GameUpdate from '../GameUpdate/GameUpdate';
 
 
 function MyRoutes() {
@@ -20,6 +21,7 @@ function MyRoutes() {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact/>} />
       <Route path="/uploadGame" element={<GameUpload/>} />
+      <Route path="/updateGame" element={<GameUpdate/>} />
       <Route path='/game/:id' element={<SingleGame />} />
     </Routes>
     <Footer/>

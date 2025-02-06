@@ -67,6 +67,16 @@ function Header() {
                                 Upload Game
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink
+                                to="/updateGame"
+                                className={({ isActive }) =>
+                                    isActive ? `${styles.menuItem} ${styles.active}` : styles.menuItem
+                                }
+                            >
+                                Update Game
+                            </NavLink>
+                        </li>
                     </ul>
                 </nav>
             </div>

@@ -26,7 +26,7 @@ const games = [
     },
     {
         id: 4,
-        title: "Learn numbers class B",
+        title: "B",
         image: img_numbers,
         content: "Game for learning numbers",
     }

@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import './GameUpload.css';
+import './GameUpdate.css';
 import dataGames from '../../Data/gameData';
 import CustomButton from '../common/CustomButton/CustomButton';
 
-const GameUpload = () => {
+const GameUpdate = () => {
     const [gameData, setGameData] = useState({
         title: '',
         description: '',
         image: null,
     });
     const [existingGames, setExistingGames] = useState([]);
-    const [showPopup, setShowPopup] = useState(false);
+    const [uniqueTitles, setUniqueTitles] = useState([]);
 
     // Fetch existing games when component mounts
     useEffect(() => {
@@ -19,9 +19,16 @@ const GameUpload = () => {
 
     const fetchExistingGames = () => {
         try {
+            // Use the imported data directly
             setExistingGames(dataGames);
+            
+            // Extract unique titles from existing games
+            const titles = [...new Set(dataGames.map(game => game.title))];
+            setUniqueTitles(titles);
+
         } catch (error) {
             console.error('Error processing games:', error);
+            setUniqueTitles([]);
         }
     };
 
@@ -43,59 +50,36 @@ const GameUpload = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-        // Check if game already exists
-        const gameExists = existingGames.some(
-            game => game.title.toLowerCase() === gameData.title.toLowerCase()
-        );
-
-        if (gameExists) {
-            setShowPopup(true);
-            setTimeout(() => setShowPopup(false), 3000); // Hide popup after 3 seconds
-            return;
-        }
-
-        // Add new game to the list
-        const newGame = {
-            id: existingGames.length + 1,
-            title: gameData.title,
-            description: gameData.description,
-            image: gameData.image ? URL.createObjectURL(gameData.image) : null,
-        };
-
-        setExistingGames(prev => [...prev, newGame]);
-
+        // Send the data to backend
+        console.log('Game data to be submitted:', gameData);
         // Reset form after submission
         setGameData({
             title: '',
             description: '',
             image: null,
         });
-
-        // Optional: You can add a success message here
-        alert('Game successfully added!');
     };
 
     return (
-        <div className="game-upload-container">
-            <h2>Upload New Game</h2>
-            {showPopup && (
-                <div className="popup error">
-                    Game already exists! Please choose a different name.
-                </div>
-            )}
-            <form onSubmit={handleSubmit} className="game-upload-form">
+        <div className="game-update-container">
+            <h2>Update Game</h2>
+            <form onSubmit={handleSubmit} className="game-update-form">
                 <div className="form-group">
                     <label htmlFor="title">Game Title</label>
-                    <input
-                        type="text"
+                    <select
                         id="title"
                         name="title"
                         value={gameData.title}
                         onChange={handleInputChange}
                         required
-                        placeholder="Enter game title"
-                    />
+                    >
+                        <option value="">Select a game</option>
+                        {uniqueTitles.map((title, index) => (
+                            <option key={index} value={title}>
+                                {title}
+                            </option>
+                        ))}
+                    </select>
                 </div>
 
                 <div className="form-group">
@@ -111,7 +95,7 @@ const GameUpload = () => {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="image">Game Image</label>
+                <label htmlFor="image">Game Image</label>
                     <div className="custom-file-input">
                         <input
                             type="file"
@@ -141,11 +125,11 @@ const GameUpload = () => {
                     variant="primary" 
                     className="primary"
                 >
-                    Upload Game
+                    Update Game
                 </CustomButton>
             </form>
         </div>
     );
 };
 
-export default GameUpload;
+export default GameUpdate;

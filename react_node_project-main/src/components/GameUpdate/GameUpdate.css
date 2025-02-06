@@ -1,19 +1,19 @@
-.game-upload-container {
+.game-update-container {
     max-width: 600px;
     margin: 2rem auto;
     padding: 2rem;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.game-upload-container h2 {
+.game-update-container h2 {
     text-align: center;
     color: #333;
     margin-bottom: 2rem;
 }
 
-.game-upload-form {
+.game-update-form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -27,7 +27,7 @@
 
 .form-group label {
     font-weight: 600;
-    color: #333;
+    color: #444;
 }
 
 .form-group input[type="text"],
@@ -37,17 +37,10 @@
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 1rem;
-    transition: border-color 0.3s;
-}
-
-.form-group input[type="text"]:focus,
-.form-group textarea:focus {
-    border-color: #007bff;
-    outline: none;
 }
 
 .form-group textarea {
-    min-height: 120px;
+    min-height: 100px;
     resize: vertical;
 }
 
@@ -56,27 +49,33 @@
 }
 
 .custom-file-input {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 10px;
 }
 
 .file-input {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
-.file-button {
+.file-input-button {
+    display: inline-block;
+    padding: 8px 16px;
     background-color: #e0e4e8;
-    color: black;
-    padding: 0.75rem 1.5rem;
-    border: none;
     border-radius: 4px;
-    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s;
 }
 
-.file-button:hover {
+.file-input-button:hover {
     background-color: #9ea1a4;
 }
 
@@ -88,12 +87,12 @@
 .submit-button {
     background-color: #007bff;
     color: white;
-    padding: 0.75rem 1.5rem;
+    padding: 1rem;
     border: none;
     border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.2s;
 }
 
 .submit-button:hover {
@@ -103,31 +102,4 @@
 .submit-button:disabled {
     background-color: #cccccc;
     cursor: not-allowed;
-}
-
-.popup {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 1rem 2rem;
-    border-radius: 4px;
-    animation: slideDown 0.3s ease-out;
-    z-index: 1000;
-}
-
-.popup.error {
-    background-color: #ff4444;
-    color: white;
-}
-
-@keyframes slideDown {
-    from {
-        transform: translate(-50%, -100%);
-        opacity: 0;
-    }
-    to {
-        transform: translate(-50%, 0);
-        opacity: 1;
-    }
 }

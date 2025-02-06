@@ -1,6 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
 import styles from './SingleGame.module.css';
+import CustomButton from '../common/CustomButton/CustomButton';
 
 /**
  * A page that displays a single game based on the game ID
@@ -19,6 +20,14 @@ function SingleGame() {
                 <h1 className={styles.gameTitle}>{game?.title}</h1>
                 <img src={game?.image} alt={game?.title} className={styles.gameImage} />
                 <p className={styles.gameContent}>{game?.content}</p>
+                <CustomButton
+                    variant="primary"
+                    className="primary"
+                    type="button"
+                    onClick={() => window.history.back()}
+                >
+                    Back to Games
+                </CustomButton>
             </div>
         </div>
     </section>
